@@ -1,18 +1,23 @@
-import React, {useContext} from 'react'
+import React, {useContext, useEffect} from 'react'
 import Product from '../components/Product'
-import {
+import {useHistory,
     Switch,
     Route,
     Link
   } from "react-router-dom";
+import './Style.css'
 import MyContext from '../states/MyContext'
 
 const Menu = () =>{
     const {state} = useContext(MyContext)
+    let history = useHistory();
+    useEffect(() => {
+      history.push("/break");
+    },[history]);
     return(
       <div>
-<Link to='/break'>brfas</Link>
-<Link to='/lunch'>lnch</Link>
+<button className='menu-options'><Link to='/break'>brfas</Link></button>
+<button className='menu-options'><Link to='/lunch'>lnch</Link></button>
 <Switch>
 <Route path="/break">
 {console.log(state.Products.Breakfast)}
@@ -27,7 +32,7 @@ const Menu = () =>{
            })}
 </Route>
 </Switch>
-         
+
       </div>
     )
 }
