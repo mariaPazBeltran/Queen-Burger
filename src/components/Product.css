@@ -1,14 +1,12 @@
 .button-container {
-    grid-gap:  5px;
-     display: grid;
-     grid-template-columns: auto auto;
-     float: left;
-     padding: 4em;
-     margin-top: 0px;
-     margin-bottom: 0px;
-   }
+  float: left;
+    padding: 3em;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+  
    .img-product{
-      width: 150px;
+      width: 130px;
    }
    .button-container>div> p,h6{
      padding: 0vh;

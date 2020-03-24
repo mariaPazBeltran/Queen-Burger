@@ -7,17 +7,25 @@ import {useHistory,
   } from "react-router-dom";
 import './Style.css'
 import MyContext from '../states/MyContext'
+import Detail from '../components/Detail';
 
 const Menu = () =>{
     const {state} = useContext(MyContext)
     let history = useHistory();
+    /*Al cargar la vista del menú, primero se 
+      visualizaran las opciones del desayuno
+     */
     useEffect(() => {
       history.push("/break");
     },[history]);
+
     return(
-      <div>
-<button className='menu-options'><Link to='/break'>brfas</Link></button>
-<button className='menu-options'><Link to='/lunch'>lnch</Link></button>
+      <div id='menu-container'>
+        <Detail/>
+      <div id='options'>
+<button className='menu-options'><Link to='/break'>Breakfast</Link></button>
+<button className='menu-options'><Link to='/lunch'>Lunch</Link></button>
+<div id='products_buttons'>
 <Switch>
 <Route path="/break">
 {console.log(state.Products.Breakfast)}
@@ -32,7 +40,8 @@ const Menu = () =>{
            })}
 </Route>
 </Switch>
-
+</div>
+      </div>
       </div>
     )
 }
