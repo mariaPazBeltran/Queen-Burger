@@ -1,0 +1,17 @@
+#menu-container{
+    display: flex;
+}
+.menu-options{
+        border: none;
+        min-height: 80px;
+        min-width: 200px;
+        margin: 30px;
+        border-radius: 20px;
+}
+#options{
+    text-align: center;
+    padding: 1em;
+}
+#products_buttons{
+    padding: 0 4em;
+}
