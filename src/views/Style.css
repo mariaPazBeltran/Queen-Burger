@@ -7,6 +7,10 @@
         min-width: 200px;
         margin: 30px;
         border-radius: 20px;
+        background-color: #ffffff;
+}
+#detail_info{
+    
 }
 #options{
     text-align: center;

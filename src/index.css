@@ -5,7 +5,10 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
+ /* background: linear-gradient(180deg, #D5B3E5 0%, #B579D2 100%);
+ background-image: linear-gradient(180deg, #D5B3E5 0%, #B579D2 100%); */
+ min-height: 100vh;
+ background: linear-gradient(180deg, rgba(67, 0, 100, 0.18) 0%, rgba(115, 65, 139, 0.18) 10%, rgba(255, 255, 255, 0.18) 100%)}
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',

@@ -2,7 +2,7 @@ import Products from '../Data/Products.json'
 const InitialState = {
   Products: Products,
   Client: '',
-  Table: 0,
+  Table: '',
   Orders: [],
   Price: 0,
   KitchenOrders: [],
