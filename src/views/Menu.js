@@ -8,6 +8,7 @@ import {useHistory,
 import './Style.css'
 import MyContext from '../states/MyContext'
 import Detail from '../components/Detail';
+import Inputclient from '../components/Inputclient';
 
 const Menu = () =>{
   const {state, dispatch} = useContext(MyContext)
@@ -36,7 +37,10 @@ const Menu = () =>{
  
   return(
     <div id='menu-container'>
-      <Detail/>
+      <div id='detail_info'>
+        <Inputclient/>
+        <Detail/>
+      </div>
       <div id='options'>
         <button className='menu-options'>
           <Link to='/Break'>Breakfast</Link>

@@ -25,6 +25,11 @@ function reducer(state, action) {
           Orders: [],
           Price: 0,
         }
+        case 'getInfoClient':
+          return{
+            ...state,
+            [action.field]: action.value
+          }
       default:
         throw new Error();
     }
