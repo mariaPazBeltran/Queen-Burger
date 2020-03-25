@@ -1,4 +1,3 @@
-import InitialState from "./InitialState";
 
 function reducer(state, action) {
     switch (action.type) {
@@ -19,7 +18,13 @@ function reducer(state, action) {
         Price: action.value
       }
       case 'reset':
-        return InitialState
+        return {
+          ...state,
+          Client: '',
+          Table: 0,
+          Orders: [],
+          Price: 0,
+        }
       default:
         throw new Error();
     }

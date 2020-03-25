@@ -43,6 +43,8 @@ const Detail = () =>{
             </table>
           </div>
           <div className="sendingkitchen">
+          <button onClick={()=> dispatch({
+          type:'reset' })}>Nuevo</button>
           <button>Enviar</button>
           </div>
           </section>

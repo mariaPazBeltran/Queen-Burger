@@ -10,20 +10,17 @@ import MyContext from '../states/MyContext'
 import Detail from '../components/Detail';
 
 const Menu = () =>{
-    const {state, dispatch} = useContext(MyContext)
-    let history = useHistory();
+  const {state, dispatch} = useContext(MyContext)
+  let history = useHistory();
     /*Al cargar la vista del menú, primero se 
-      visualizaran las opciones del desayuno
-     */
-    useEffect(() => {
-      history.push("/break");
-    },[history]);
-
+      visualizaran las opciones del desayuno */
+  useEffect(() => {
+    history.push("/break");
+  },[history]);
 
 /**Mostrar el detalle de un pedido */
-const clickItem = e => {
-
-  let products = state.Orders;
+  const clickItem = e => {
+    let products = state.Orders;
     products.push({
       product: e.product,
       price: e.price
@@ -33,33 +30,36 @@ const clickItem = e => {
     let currentTotal = state.Price;
     let sumTotal = e.price;
     let newTotal = currentTotal + sumTotal;
-  dispatch({
-    type:'addDetail', payload:products, value:newTotal})
-  }
+    dispatch({
+      type:'addDetail', payload:products, value:newTotal})
+    }
  
-    return(
-      <div id='menu-container'>
-        <Detail/>
+  return(
+    <div id='menu-container'>
+      <Detail/>
       <div id='options'>
-<button className='menu-options'><Link to='/Break'>Breakfast</Link></button>
-<button className='menu-options'><Link to='/Lunch'>Lunch</Link></button>
-<div id='products_buttons'>
-<Switch>
-<Route path="/Break">
-           {state.Products.Breakfast.map((productInfo, index)=>{
-               return <Product key={index} infoproduct={productInfo} onClick={clickItem}/>
-           })}
-</Route>
-<Route path="/Lunch">
-  
-{state.Products.Lunch.map((productInfo, index)=>{
-               return <Product key={index} infoproduct={productInfo} onClick={clickItem}/>
-           })}
-</Route>
-</Switch>
-</div>
+        <button className='menu-options'>
+          <Link to='/Break'>Breakfast</Link>
+        </button>
+        <button className='menu-options'>
+          <Link to='/Lunch'>Lunch</Link>
+        </button>
+        <div id='products_buttons'>
+        <Switch>
+          <Route path="/Break">
+            {state.Products.Breakfast.map((productInfo, index)=>{
+              return <Product key={index} infoproduct={productInfo} onClick={clickItem}/>
+            })}
+          </Route>
+          <Route path="/Lunch">
+            {state.Products.Lunch.map((productInfo, index)=>{
+              return <Product key={index} infoproduct={productInfo} onClick={clickItem}/>
+            })}
+          </Route>
+        </Switch>
+        </div>
       </div>
-      </div>
+    </div>
     )
 }
 
