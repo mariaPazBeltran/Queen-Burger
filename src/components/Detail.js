@@ -11,8 +11,28 @@ const Detail = () =>{
       dispatch({
         type:'removeItems', payload:index, value:newTotal})
       }
+
+      const sendToKitchen = () =>{
+        const nameClient = state.Client
+        const numberTable = state.Table
+        const orders = state.Orders
+        if( nameClient === "" || numberTable === ''){
+           document.getElementById('validation').innerHTML= 'Llena los campos correspondietes'
+           document.getElementById('validation').style.border= 'solid'
+          }
+       if (orders.length === 0){
+          document.getElementById('validation').innerHTML= 'No has hecho ningún Pedido'
+          document.getElementById('validation').style.border= 'solid'
+          }
+          else{
+            document.getElementById('validation').innerHTML= ''
+            document.getElementById('validation').style.border= 'none'
+            alert('se ha enviado el pedido a la base de datos')
+          }
+      }
     return(
         <section>
+          <div id='validation'></div>
         <div className="table-detail">
             <table>
               <thead>
@@ -45,7 +65,7 @@ const Detail = () =>{
           <div className="sendingkitchen">
           <button onClick={()=> dispatch({
           type:'reset' })}>Nuevo</button>
-          <button>Enviar</button>
+          <button onClick={sendToKitchen}>Enviar</button>
           </div>
           </section>
     )

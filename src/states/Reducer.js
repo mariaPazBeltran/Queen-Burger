@@ -21,7 +21,7 @@ function reducer(state, action) {
         return {
           ...state,
           Client: '',
-          Table: 0,
+          Table: '',
           Orders: [],
           Price: 0,
         }

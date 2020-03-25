@@ -39,3 +39,8 @@
   .sendingkitchen{
     text-align: right;
   }
+  #validation{
+    color: red;
+    text-align: center;
+    font-size: x-large;
+  }
