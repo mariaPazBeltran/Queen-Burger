@@ -3,7 +3,14 @@ import MyContext from '../states/MyContext';
 import './Detail.css'
 
 const Detail = () =>{
-    const {state} = useContext(MyContext)
+    const {state, dispatch} = useContext(MyContext)
+  const removeItem = (item, index) => {
+      let currentTotal = state.Price;
+      let minusTotal = item.price;
+      let newTotal = currentTotal - minusTotal;
+      dispatch({
+        type:'removeItems', payload:index, value:newTotal})
+      }
     return(
         <section>
         <div className="table-detail">
@@ -15,12 +22,12 @@ const Detail = () =>{
                 </tr>
               </thead>
               <tbody>
-                {state.Orders.map((e, index) => (
+                {state.Orders.map((item, index) => (
                   <tr key={index}>
-                    <td>{e.product}</td>
-                    <td>{e.price}</td>
+                    <td>{item.product}</td>
+                    <td>{item.price}</td>
                     <td>
-                      <button >
+                      <button onClick={()=>removeItem(item, index)} >
                       Borrar
                       </button>
                     </td>
