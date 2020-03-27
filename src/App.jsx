@@ -4,16 +4,17 @@ import {
   BrowserRouter as Router,
   Switch,
   Route
-} from "react-router-dom";
+} from 'react-router-dom';
 
 import ProviderContext from './states/ProviderContext';
 import Menu from './views/Menu';
+
 
 function App() {
   return (
     <ProviderContext className="App">
       <Router>
-      <Menu/>
+        <Menu/>
       </Router>
     </ProviderContext>
   );
